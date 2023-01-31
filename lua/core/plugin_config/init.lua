@@ -1,0 +1,11 @@
+require("core.plugin_config.auto_pairs")
+require("core.plugin_config.bufferline")
+require("core.plugin_config.comment")
+require("core.plugin_config.diffview")
+require("core.plugin_config.indent_blankline")
+require("core.plugin_config.lualine")
+require("core.plugin_config.nerdtree")
+require("core.plugin_config.telescope")
+require("core.plugin_config.treesitter")
+require("core.plugin_config.vim_sleuth")
+
