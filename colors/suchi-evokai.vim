@@ -21,7 +21,7 @@ hi Title                 guifg=#ffffff   guibg=NONE      gui=NONE
 hi Comment               guifg=#75715e   guibg=NONE      gui=NONE
 hi Conceal               guifg=#75715e   guibg=NONE      gui=NONE
 hi Constant              guifg=#99f6fa   guibg=NONE      gui=NONE
-hi String                guifg=#16b540   guibg=NONE      gui=NONE
+hi String                guifg=#fff600   guibg=NONE      gui=NONE
 hi Character             guifg=#c500ff   guibg=NONE      gui=NONE
 hi Number                guifg=#c500ff   guibg=NONE      gui=NONE
 hi Boolean               guifg=#c500ff   guibg=NONE      gui=NONE
@@ -86,7 +86,7 @@ hi StatusLineTermNC      guifg=#444444   guibg=#262622   gui=NONE
 hi CursorLine            guifg=NONE      guibg=NONE      gui=NONE cterm=NONE
 hi CursorLineNr          guifg=#ff027f   guibg=NONE      gui=BOLD cterm=NONE
 hi CursorColumn          guifg=NONE      guibg=#000000   gui=NONE
-hi MatchParen            guifg=#ffffff   guibg=#8200a8   gui=NONE
+hi MatchParen            guifg=#000000   guibg=#8200a8   gui=NONE
 hi Search                guifg=#FC167C   guibg=#481a28   gui=NONE
 hi QuickFixLine                guifg=#FC167C   guibg=#481a28   gui=NONE
 hi IncSearch             guifg=#FC167C   guibg=#481a28   gui=INVERSE
@@ -112,9 +112,9 @@ hi htmlTag               guifg=#ff027f   guibg=NONE      gui=NONE
 hi xmlTag                guifg=#ff027f   guibg=NONE      gui=NONE
 hi htmlEndTag            guifg=#ff027f   guibg=NONE      gui=NONE
 hi xmlEndTag             guifg=#ff027f   guibg=NONE      gui=NONE
-hi htmlSpecialTagName    guifg=#36a6ff   guibg=#003e65   gui=NONE
-hi htmlTagName           guifg=#36a6ff   guibg=#003e65   gui=NONE
-hi xmlTagName            guifg=#36a6ff   guibg=#003e65   gui=NONE
+hi htmlSpecialTagName    guifg=#36a6ff   guibg=NONE      gui=NONE
+hi htmlTagName           guifg=#36a6ff   guibg=NONE      gui=NONE
+hi xmlTagName            guifg=#36a6ff   guibg=NONE      gui=NONE
 hi htmlArg               guifg=#3cff00   guibg=NONE      gui=NONE
 hi htmlSpecialChar       guifg=#bb40f5   guibg=NONE      gui=NONE
 hi djangoVarBrackets     guifg=#8200a8   guibg=NONE      gui=NONE
