@@ -59,6 +59,9 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- Commonly used snippets
+  use "rafamadriz/friendly-snippets"
+
   -- Auto close brackets and strings
   use "jiangmiao/auto-pairs"
 

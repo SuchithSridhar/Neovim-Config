@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/suchi/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/suchi/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/suchi/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
