@@ -9,6 +9,14 @@ create_cmd(
 )
 
 create_cmd(
+    'SpellToggle',
+    'set spell!',
+    {
+        desc = 'Toggle spell checker'
+    }
+)
+
+create_cmd(
     'AddCreditsHash',
     'read $HOME/Programming/snippets/author-hash.txt',
     {
