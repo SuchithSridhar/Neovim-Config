@@ -1,3 +1,4 @@
+
 -- Remap Esc to jk
 vim.keymap.set('i', 'jk', "<Esc>", { silent = true })
 vim.keymap.set('n', '<C-N>', ":NERDTreeToggle<CR>", { silent = true })
