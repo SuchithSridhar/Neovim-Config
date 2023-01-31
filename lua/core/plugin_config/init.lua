@@ -8,4 +8,5 @@ require("core.plugin_config.nerdtree")
 require("core.plugin_config.telescope")
 require("core.plugin_config.treesitter")
 require("core.plugin_config.vim_sleuth")
+require("core.plugin_config.lsp_config")
 

@@ -34,11 +34,39 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- LSP Configuration & Plugins
+  use {
+    'neovim/nvim-lspconfig',
+    requires = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+
+      -- Additional lua configuration, makes nvim stuff amazing
+      'folke/neodev.nvim',
+    },
+  }
+
+  use { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip'
+    }
+  }
+
   -- Auto close brackets and strings
   use "jiangmiao/auto-pairs"
 
   -- Vim diffs for current file
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+  -- Lualine for better status line at the bottom
+  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
 
   -- Bufferline at the top
   use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
