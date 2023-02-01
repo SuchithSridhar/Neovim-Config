@@ -1,5 +1,24 @@
 require('mason').setup()
 
+-- Available Server: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
+local servers = {
+  ltex = {},
+  clangd = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {},
+  sumneko_lua = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      },
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
+}
+
+
 local on_attach = function(_, bufnr)
   local nmap = function(keys, func, desc)
     if desc then
@@ -31,24 +50,6 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
 end
-
--- Available Server: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
-local servers = {
-  clangd = {},
-  gopls = {},
-  pyright = {},
-  rust_analyzer = {},
-  tsserver = {},
-  sumneko_lua = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      },
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
-}
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
