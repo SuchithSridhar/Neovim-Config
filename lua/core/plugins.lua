@@ -83,6 +83,9 @@ return require('packer').startup(function(use)
   -- Detect tabstop and shiftwidth automatically
   use 'tpope/vim-sleuth'
 
+  -- Add git signs to nvim
+  use 'lewis6991/gitsigns.nvim'
+
   -- Color themes
   use 'navarasu/onedark.nvim' -- Theme inspired by Atom
 
