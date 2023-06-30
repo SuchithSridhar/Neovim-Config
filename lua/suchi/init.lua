@@ -1,0 +1,5 @@
+require("suchi.keymaps")
+require("suchi.packer")
+require("suchi.plugins")
+require("suchi.colors")
+require("suchi.treesitter")
