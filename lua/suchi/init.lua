@@ -1,6 +1,0 @@
-require("suchi.set")
-require("suchi.packer")
-require("suchi.plugins")
-require("suchi.treesitter")
-require("suchi.colors")
-require("suchi.keymaps")

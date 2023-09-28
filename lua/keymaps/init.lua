@@ -1,0 +1,5 @@
+require('keymaps.global')
+require('keymaps.latex')
+require('keymaps.markdown')
+require('keymaps.java')
+require('keymaps.plugins')
