@@ -112,12 +112,8 @@ require('lazy').setup({
   },
 
   -- Indent Blankline
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-  },
+  -- Add indentation guides even on blank lines
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
   -- use gc to comment and uncomment lines
   'numToStr/Comment.nvim',

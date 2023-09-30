@@ -22,7 +22,8 @@ require('bufferline').setup {
 vim.opt.list = false
 vim.cmd([[highlight IndentBlanklineIndent1 guifg=#444444 gui=nocombine]])
 
-require("indent_blankline").setup {
+-- Indent black line
+require("ibl").setup {
   space_char_blankline = " ",
   show_current_context = true,
   show_current_context_start = false,
