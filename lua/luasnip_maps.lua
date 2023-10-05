@@ -5,6 +5,7 @@ local t = ls.t -- text
 local i = ls.i -- input
 local f = ls.f -- function
 
+-- Documentation at: https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
 
 -- Markdown Snippets
 
