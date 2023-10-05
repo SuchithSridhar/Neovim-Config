@@ -24,6 +24,14 @@ local md_snips = {
     }, {
         t({'$$$', ''}), i(1), t({'', '$$$'})
     }),
+
+    s({
+        trig = 'pic',
+        namr = 'Insert picture from ./pic',
+        desc = 'Inert picture from ./pic into mardown.'
+    }, {
+        t({"["}), i(2), t({"](./pic/pic"}), i(1), t({".png)"})
+    }),
 }
 
 

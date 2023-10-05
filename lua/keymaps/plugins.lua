@@ -22,6 +22,13 @@ ks("n", "<leader>hj", function() harpoon_ui.nav_file(2) end)
 ks("n", "<leader>hk", function() harpoon_ui.nav_file(3) end)
 ks("n", "<leader>hl", function() harpoon_ui.nav_file(4) end)
 
+-- Lua Snip Keymaps
+
+local luasnip = require('luasnip')
+
+ks("i", "<C-j>", function() luasnip.jump(1) end)
+ks("i", "<C-k>", function() luasnip.jump(-1) end)
+
 -- Hop.nvim
 -- https://github.com/smoka7/hop.nvim/wiki/Commands
 
