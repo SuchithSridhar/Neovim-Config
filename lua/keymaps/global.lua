@@ -10,6 +10,9 @@ ks('n', 'L', ':bn<CR>', { silent = true })
 -- Clear highlight after search
 ks('n', '<leader>nh', ':nohlsearch<CR>')
 
+-- Reload colorscheme
+ks('n', '<leader>nr', ':so ~/.config/nvim/lua/colors.lua<CR>')
+
 -- Save using Ctrl-S
 ks('i', '<C-S>', '<Esc>:w<CR>a', { silent = true })
 ks('n', '<C-S>', ':w<CR>', { silent = true })

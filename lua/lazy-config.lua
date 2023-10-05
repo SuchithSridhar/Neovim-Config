@@ -85,6 +85,7 @@ require('lazy').setup({
   'navarasu/onedark.nvim',
   'rose-pine/neovim',
   'folke/tokyonight.nvim',
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   -- Lua Snip (Snippet Engine)
   'saadparwaiz1/cmp_luasnip',

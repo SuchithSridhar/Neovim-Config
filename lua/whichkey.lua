@@ -163,7 +163,8 @@ local mappings = {
 
   n = {
     name = "Nvim",
-    h = "No Highlight"
+    h = "No Highlight",
+    r = "Reload colors"
   },
 
   d = "Hard Delete",
