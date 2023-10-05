@@ -33,3 +33,9 @@ ks("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Make cursor stay at start during J
 ks("n", "J", "mzJ`z")
+
+-- Move to different window
+ks("n", "<leader>wh", "<C-w>h")
+ks("n", "<leader>wl", "<C-w>l")
+ks("n", "<leader>wj", "<C-w>j")
+ks("n", "<leader>wk", "<C-w>k")

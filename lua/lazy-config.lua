@@ -124,6 +124,13 @@ require('lazy').setup({
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
 
+  -- Plugin similar to easy motions for vim
+  {
+    'smoka7/hop.nvim',
+    version = "*",
+    opts = {},
+  },
+
   -- Jinja Syntax highlighing
   'Glench/Vim-Jinja2-Syntax'
 

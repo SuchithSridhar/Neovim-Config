@@ -1,5 +1,6 @@
 require("cmp_lsp_config")
 require("whichkey")
+require("luasnip_maps")
 
 -- Git signs
 require('gitsigns').setup()

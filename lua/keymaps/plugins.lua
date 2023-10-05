@@ -22,6 +22,13 @@ ks("n", "<leader>hj", function() harpoon_ui.nav_file(2) end)
 ks("n", "<leader>hk", function() harpoon_ui.nav_file(3) end)
 ks("n", "<leader>hl", function() harpoon_ui.nav_file(4) end)
 
+-- Hop.nvim
+-- https://github.com/smoka7/hop.nvim/wiki/Commands
+
+ks('n', '<leader>ee', ":HopWord<CR>")
+ks('n', '<leader>er', ":HopChar1<CR>")
+ks('n', '<leader>el', ":HopLine<CR>")
+
 -- UndoTree
 
 ks("n", "<leader>u", vim.cmd.UndotreeToggle)

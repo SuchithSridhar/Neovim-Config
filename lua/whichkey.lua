@@ -127,6 +127,13 @@ local mappings = {
     b = "Buffers"
   },
 
+  e = {
+    name = "Hop",
+    e = "Hop Word",
+    r = "Hop Char 1",
+    l = "Hop Line"
+  },
+
   h = {
     name = "Harpoon",
     a = "Add File",
@@ -135,6 +142,18 @@ local mappings = {
     j = "Second Mark",
     k = "Third Mark",
     l = "Fourth Mark",
+  },
+
+-- ks("n", "<leader>wh", "<Ctrl-w>h")
+-- ks("n", "<leader>wl", "<Ctrl-w>l")
+-- ks("n", "<leader>wj", "<Ctrl-w>j")
+-- ks("n", "<leader>wk", "<Ctrl-w>k")
+  w = {
+    name = "Window",
+    h = "Left",
+    j = "Down",
+    k = "Up",
+    l = "Right"
   },
 
   g = {
