@@ -33,6 +33,14 @@ local md_snips = {
     }, {
         t({"["}), i(2), t({"](./pic/pic"}), i(1), t({".png)"})
     }),
+
+    s({
+        trig = '<?',
+        namr = 'Create PHP tags',
+        desc = 'Create a pair of PHP tags (use inside codeblock).'
+    }, {
+        t({'<?php'}), i(1), t({'?>'})
+    }),
 }
 
 
