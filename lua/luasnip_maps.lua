@@ -43,7 +43,31 @@ local md_snips = {
     }),
 }
 
+-- Latex Snippets
+
+local tex_snips = {
+    s({
+        trig = 'center',
+        namr = 'The center environment',
+        desc = 'Create a center enviroment.'
+    }, {
+        t({'\\begin{center}',''}), i(1), t({'', '\\end{center}'})
+    }),
+
+    s({
+        trig = 'pic',
+        namr = 'Insert picture from ./pic',
+        desc = 'Inert picture from ./pic into mardown.'
+    }, {
+        t({'\\includegraphics[width='}),
+        i(2, "1"),
+        t({"\\linewidth]{./pic/pic"}),
+        i(1),
+        t({".png}"})
+    }),
+}
 
 ls.add_snippets(nil, {
     markdown = md_snips,
+    tex = tex_snips
 })
