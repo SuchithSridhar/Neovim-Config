@@ -65,9 +65,46 @@ local tex_snips = {
         i(1),
         t({".png}"})
     }),
+
+    s({
+        trig = 'verb',
+        namr = 'Inline code',
+        desc = 'Insert inline code into latex.'
+    }, {
+        t({'\\verb|'}),
+        i(1),
+        t('|')
+    })
+}
+
+local jinja_snips = {
+    s({
+        trig = 'block',
+        namr = 'Create a block',
+        desc = 'Create a block'
+    }, {
+        t("{% block "),
+        i(1, "block_name"),
+        t({" %}", ""}),
+        i(2),
+        t({"", "{% endblock "}),
+        f(function(args) return args[1][1] end, {1}),
+        t(" %}")
+    }),
+
+    s({
+        trig = '{%',
+        namr = 'Jinja tag',
+        desc = 'Jinja tag'
+    }, {
+        t("{% "),
+        i(1),
+        t({" %"}),  -- The brace will close itself
+    }),
 }
 
 ls.add_snippets(nil, {
     markdown = md_snips,
-    tex = tex_snips
+    tex = tex_snips,
+    jinja = jinja_snips,
 })

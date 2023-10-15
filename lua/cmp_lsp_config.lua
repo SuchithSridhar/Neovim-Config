@@ -3,6 +3,7 @@
 local lsp = require('lsp-zero').preset({})
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+local lsp_config = require('lspconfig')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
@@ -71,7 +72,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+lsp_config.lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.ensure_installed({
 })
@@ -79,4 +80,20 @@ lsp.ensure_installed({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-lsp.setup()
+lsp.setup();
+lsp_config.emmet_ls.setup({
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "eruby", "html", "javascript", "javascriptreact", "less",
+    "svelte", "pug", "typescriptreact", "vue", "jinja"
+  },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+  }
+})

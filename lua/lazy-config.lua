@@ -67,6 +67,21 @@ require('lazy').setup({
   },
 
   {
+    "jackMort/ChatGPT.nvim",
+      event = "VeryLazy",
+      config = function()
+        require("chatgpt").setup({
+          api_key_cmd = "cat /home/suchi/.pass/chatgpt-api-key"
+        })
+      end,
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
+  },
+
+  {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
     version = "2.*",
