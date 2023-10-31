@@ -31,7 +31,7 @@ local md_snips = {
         namr = 'Insert picture from ./pic',
         desc = 'Inert picture from ./pic into mardown.'
     }, {
-        t({"["}), i(2), t({"](./pic/pic"}), i(1), t({".png)"})
+        t({"!["}), i(2), t({"](./pic/pic"}), i(1), t({".png)"})
     }),
 
     s({
