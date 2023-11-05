@@ -158,6 +158,19 @@ require('lazy').setup({
     end
   },
 
+  {
+    "chentoast/marks.nvim",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require('marks').setup {
+        default_mappings = true,
+        refresh_interval = 250,
+        builtin_marks = { ".", "<", ">", "^", "`", "'" }
+      }
+    end
+  },
+
   -- Jinja Syntax highlighing
   'Glench/Vim-Jinja2-Syntax'
 

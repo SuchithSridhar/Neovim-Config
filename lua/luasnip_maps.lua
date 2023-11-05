@@ -47,11 +47,32 @@ local md_snips = {
 
 local tex_snips = {
     s({
-        trig = 'center',
-        namr = 'The center environment',
-        desc = 'Create a center enviroment.'
+        trig = 'align',
+        namr = 'The align environment',
+        desc = 'Create a align enviroment.'
     }, {
-        t({'\\begin{center}',''}), i(1), t({'', '\\end{center}'})
+        t({'\\begin{align}',''}), i(1), t({'', '\\end{align}'})
+    }),
+
+    s({
+        trig = 'gather',
+        namr = 'The gather environment',
+        desc = 'Create a gather enviroment.'
+    }, {
+        t({'\\begin{gather}',''}), i(1), t({'', '\\end{gather}'})
+    }),
+
+    s({
+        trig = '\\(',
+        namr = 'Inline math',
+    }, {
+        t({'\\('}), i(1), t({'\\)'})
+    }),
+    s({
+        trig = '\\[',
+        namr = 'Block math',
+    }, {
+        t({'\\[', ''}), i(1), t({'', ']\\)'})
     }),
 
     s({

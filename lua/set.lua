@@ -1,6 +1,13 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+
+vim.opt.textwidth = 80
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+
+
 vim.opt.spell = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
