@@ -50,35 +50,35 @@ require('lazy').setup({
     branch = 'v2.x',
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {                                      -- Optional
+      { 'neovim/nvim-lspconfig' }, -- Required
+      {                            -- Optional
         'williamboman/mason.nvim',
         run = function()
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
+      { 'hrsh7th/nvim-cmp' },     -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
     }
   },
 
   {
     "jackMort/ChatGPT.nvim",
-      event = "VeryLazy",
-      config = function()
-        require("chatgpt").setup({
-          api_key_cmd = "cat /home/suchi/.pass/chatgpt-api-key"
-        })
-      end,
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "cat /home/suchi/.pass/chatgpt-api-key"
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   },
 
   {
@@ -152,9 +152,27 @@ require('lazy').setup({
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("nvim-surround").setup({
+        keymaps = {
+
+          -- Placeholders since I don't want to use these
+          insert = "<C-9>",
+          insert_line = "<C-9>",
+
+          -- Normal mode surround
+          normal = "<leader>rs",
+          -- Normal mode surround entire line
+          normal_cur = "<leader>rss",
+          -- Normal mode surround but delimiters on new lines
+          normal_line = "<leader>rS",
+          -- Normal mode surround on new lines for entire line
+          normal_cur_line = "<leader>rSS",
+          visual = "<leader>rs",
+          visual_line = "<leader>rss",
+          delete = "<leader>rd",
+          change = "<leader>rc",
+        },
+      })
     end
   },
 
@@ -170,6 +188,15 @@ require('lazy').setup({
       }
     end
   },
+
+  -- Comment using gc
+  'tpope/vim-commentary',
+
+  -- Tag bar
+  -- Required installation of other packages:
+  -- https://jdhao.github.io/2018/09/28/nvim_tagbar_install_use/
+  -- Note: Just install ctags using: pacman -S ctags
+  'preservim/tagbar',
 
   -- Jinja Syntax highlighing
   'Glench/Vim-Jinja2-Syntax'
