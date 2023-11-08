@@ -15,6 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 
+  -- Game for vim motions
+  'ThePrimeagen/vim-be-good',
+
   -- Which key (keymap finder)
   'folke/which-key.nvim',
 
@@ -23,6 +26,11 @@ require('lazy').setup({
 
   -- Tree Sitter (Syntax Highlighting)
   'nvim-treesitter/nvim-treesitter',
+
+  -- Maintain context for functions and statements
+  {
+    'nvim-treesitter/nvim-treesitter-context'
+  },
 
   -- Harpoon (Fast Navigation)
   'theprimeagen/harpoon',
@@ -89,8 +97,12 @@ require('lazy').setup({
     build = "make install_jsregexp"
   },
 
-  -- Auto Pairs (Auto Close brackets/parenthesis)
-  'jiangmiao/auto-pairs',
+  -- Auto pairs
+  {
+      'windwp/nvim-autopairs',
+      event = "InsertEnter",
+      opts = {}
+  },
 
   -- Emmet Vim (HTML Emmet Shortcuts)
   'mattn/emmet-vim',
@@ -147,33 +159,13 @@ require('lazy').setup({
     opts = {},
   },
 
+  -- Close HTML tags automatically
+  "windwp/nvim-ts-autotag",
+
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        keymaps = {
-
-          -- Placeholders since I don't want to use these
-          insert = "<C-9>",
-          insert_line = "<C-9>",
-
-          -- Normal mode surround
-          normal = "<leader>rs",
-          -- Normal mode surround entire line
-          normal_cur = "<leader>rss",
-          -- Normal mode surround but delimiters on new lines
-          normal_line = "<leader>rS",
-          -- Normal mode surround on new lines for entire line
-          normal_cur_line = "<leader>rSS",
-          visual = "<leader>rs",
-          visual_line = "<leader>rss",
-          delete = "<leader>rd",
-          change = "<leader>rc",
-        },
-      })
-    end
   },
 
   {

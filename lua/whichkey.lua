@@ -166,7 +166,18 @@ local mappings = {
   n = {
     name = "Nvim",
     h = "No Highlight",
-    r = "Reload colors"
+    r = "Reload colors",
+    f = "Format"
+  },
+
+  r = {
+    name = "Surround",
+    s = "normal",
+    ss = "wrap line",
+    S = "normal w/ new lines",
+    SS = "wrap line w/ new lines",
+    d = "delete",
+    c = "change",
   },
 
   d = "Hard Delete",

@@ -7,11 +7,18 @@ ks('i', 'jk', '<Esc>', { silent = true })
 ks('n', 'H', ':bp<CR>', { silent = true })
 ks('n', 'L', ':bn<CR>', { silent = true })
 
+-- Ctrl-D and Ctrl-U
+ks('n', '<C-d>', '<C-d>zz')
+ks('n', '<C-u>', '<C-u>zz')
+
 -- Clear highlight after search
 ks('n', '<leader>nh', ':nohlsearch<CR>')
 
 -- Reload colorscheme
 ks('n', '<leader>nr', ':so ~/.config/nvim/lua/colors.lua<CR>')
+
+-- Format
+ks('n', '<leader>nf', vim.cmd.Format)
 
 -- Save using Ctrl-S
 ks('i', '<C-S>', '<Esc>:w<CR>a', { silent = true })
