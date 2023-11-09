@@ -28,9 +28,10 @@ require('lazy').setup({
   'nvim-treesitter/nvim-treesitter',
 
   -- Maintain context for functions and statements
-  {
-    'nvim-treesitter/nvim-treesitter-context'
-  },
+  'nvim-treesitter/nvim-treesitter-context',
+
+  -- Tree sitter playground
+  'nvim-treesitter/playground',
 
   -- Harpoon (Fast Navigation)
   'theprimeagen/harpoon',
