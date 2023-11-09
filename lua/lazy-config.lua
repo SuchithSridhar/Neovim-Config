@@ -28,7 +28,8 @@ require('lazy').setup({
   'nvim-treesitter/nvim-treesitter',
 
   -- Maintain context for functions and statements
-  'nvim-treesitter/nvim-treesitter-context',
+  -- I'm using my version to support markdown
+  'suchithsridhar/nvim-treesitter-context',
 
   -- Tree sitter playground
   'nvim-treesitter/playground',
