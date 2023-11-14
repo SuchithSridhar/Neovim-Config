@@ -28,6 +28,8 @@ local luasnip = require('luasnip')
 
 ks("i", "<C-j>", function() luasnip.jump(1) end)
 ks("i", "<C-k>", function() luasnip.jump(-1) end)
+ks("v", "<C-j>", function() luasnip.jump(1) end)
+ks("v", "<C-k>", function() luasnip.jump(-1) end)
 
 -- Hop.nvim
 -- https://github.com/smoka7/hop.nvim/wiki/Commands
