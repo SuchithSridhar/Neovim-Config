@@ -124,7 +124,20 @@ local jinja_snips = {
     }),
 }
 
+local dateDMY = function() return {os.date('%d %b %Y')} end
+
+local global_snips = {
+    s({
+        trig = "datenDMY",
+        namr = "Date",
+        desc = "Date with month name"
+    }, {
+        f(dateDMY, {}),
+    })
+}
+
 ls.add_snippets(nil, {
+    all = global_snips,
     markdown = md_snips,
     tex = tex_snips,
     jinja = jinja_snips,
