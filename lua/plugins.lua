@@ -40,7 +40,7 @@ vim.opt.list = false
 vim.cmd([[highlight IndentBlanklineIndent1 guifg=#444444 gui=nocombine]])
 
 -- Indent black line
-require("ibl").setup {
+-- require("ibl").setup {
   --  space_char_blankline = " ",
   --  show_current_context = true,
   --  show_current_context_start = false,
@@ -48,7 +48,7 @@ require("ibl").setup {
   --  char_highlight_list = {
   --    "IndentBlanklineIndent1",
   --  },
-}
+-- }
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1

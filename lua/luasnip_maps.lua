@@ -1,9 +1,11 @@
-local ls = require'luasnip'
+local ls = require('luasnip')
+local lse = require("luasnip.extras")
 
 local s = ls.s -- snippet
 local t = ls.t -- text
 local i = ls.i -- input
 local f = ls.f -- function
+local r = lse.rep -- represent
 
 -- Documentation at: https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
 
@@ -12,7 +14,7 @@ local f = ls.f -- function
 local md_snips = {
     s({
         trig = '$$',
-        namr = 'Inline Math',
+        name = 'Inline Math',
         desc = 'Insert pair of $$ into line for inline math in markdown.'
     }, {
         t('$$'), i(1), t('$$')
@@ -20,7 +22,7 @@ local md_snips = {
 
     s({
         trig = '$d',
-        namr = 'Display Math',
+        name = 'Display Math',
         desc = 'Insert pair of $$$ into line for display math markdown.'
     }, {
         t({'$$$', ''}), i(1), t({'', '$$$'})
@@ -28,7 +30,7 @@ local md_snips = {
 
     s({
         trig = 'pic',
-        namr = 'Insert picture from ./pic',
+        name = 'Insert picture from ./pic',
         desc = 'Inert picture from ./pic into mardown.'
     }, {
         t({"!["}), i(2), t({"](./pic/pic"}), i(1), t({".png)"})
@@ -36,7 +38,7 @@ local md_snips = {
 
     s({
         trig = '<?',
-        namr = 'Create PHP tags',
+        name = 'Create PHP tags',
         desc = 'Create a pair of PHP tags (use inside codeblock).'
     }, {
         t({'<?php'}), i(1), t({'?>'})
@@ -48,7 +50,7 @@ local md_snips = {
 local tex_snips = {
     s({
         trig = 'align',
-        namr = 'The align environment',
+        name = 'The align environment',
         desc = 'Create a align enviroment.'
     }, {
         t({'\\begin{align}',''}), i(1), t({'', '\\end{align}'})
@@ -56,28 +58,34 @@ local tex_snips = {
 
     s({
         trig = 'gather',
-        namr = 'The gather environment',
+        name = 'The gather environment',
         desc = 'Create a gather enviroment.'
     }, {
         t({'\\begin{gather}',''}), i(1), t({'', '\\end{gather}'})
     }),
 
     s({
-        trig = '\\(',
-        namr = 'Inline math',
+        trig = 'im',
+        name = 'Inline math',
     }, {
-        t({'\\('}), i(1), t({'\\)'})
+        t({'\\( '}), i(1), t({' \\)'})
     }),
     s({
-        trig = '\\[',
-        namr = 'Block math',
+        trig = 'bm',
+        name = 'Block math',
     }, {
-        t({'\\[', ''}), i(1), t({'', ']\\)'})
+        t({'\\[', ''}), i(1), t({'', '\\]'})
+    }),
+    s({
+        trig = 'frac',
+        name = 'Fraction Inline',
+    }, {
+        t({'\\frac{'}), i(1), t({'}{'}), i(2), t({'}'})
     }),
 
     s({
         trig = 'pic',
-        namr = 'Insert picture from ./pic',
+        name = 'Insert picture from ./pic',
         desc = 'Inert picture from ./pic into mardown.'
     }, {
         t({'\\includegraphics[width='}),
@@ -89,7 +97,7 @@ local tex_snips = {
 
     s({
         trig = 'verb',
-        namr = 'Inline code',
+        name = 'Inline code',
         desc = 'Insert inline code into latex.'
     }, {
         t({'\\verb|'}),
@@ -101,7 +109,7 @@ local tex_snips = {
 local jinja_snips = {
     s({
         trig = 'block',
-        namr = 'Create a block',
+        name = 'Create a block',
         desc = 'Create a block'
     }, {
         t("{% block "),
@@ -115,7 +123,7 @@ local jinja_snips = {
 
     s({
         trig = '{%',
-        namr = 'Jinja tag',
+        name = 'Jinja tag',
         desc = 'Jinja tag'
     }, {
         t("{% "),
@@ -124,12 +132,34 @@ local jinja_snips = {
     }),
 }
 
+local c_and_cpp_snips = {
+    s({
+        trig = "typedefs",
+        name = "typedefstruct",
+        desc = "typedef a struct with no name"
+    }, {
+        t({'typedef struct {', ''}),
+        i(2),
+        t({'', '} '}), i(1), t(';')
+    }),
+    s({
+        trig = "hfile",
+        name = "H file",
+        desc = "Header for .h files"
+    }, {
+        t("#ifndef "), i(1), t({'', ''}),
+        t("#define "), r(1), t({'', '', ''}),
+        i(2),
+        t({'', '', "#endif"}),
+    })
+}
+
 local dateDMY = function() return {os.date('%d %b %Y')} end
 
 local global_snips = {
     s({
         trig = "datenDMY",
-        namr = "Date",
+        name = "Date",
         desc = "Date with month name"
     }, {
         f(dateDMY, {}),
@@ -138,6 +168,7 @@ local global_snips = {
 
 ls.add_snippets(nil, {
     all = global_snips,
+    cpp = c_and_cpp_snips,
     markdown = md_snips,
     tex = tex_snips,
     jinja = jinja_snips,
