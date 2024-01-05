@@ -86,7 +86,8 @@ lsp_config.emmet_ls.setup({
   capabilities = capabilities,
   filetypes = {
     "eruby", "html", "javascript", "javascriptreact", "less",
-    "svelte", "pug", "typescriptreact", "vue", "jinja", "php"
+    "svelte", "pug", "typescriptreact", "vue", "jinja", "php",
+    "templ"
   },
   init_options = {
     html = {
