@@ -144,8 +144,6 @@ local mappings = {
     l = "Fourth Mark",
   },
 
-  t = "Tagbar",
-
 -- ks("n", "<leader>wh", "<Ctrl-w>h")
 -- ks("n", "<leader>wl", "<Ctrl-w>l")
 -- ks("n", "<leader>wj", "<Ctrl-w>j")

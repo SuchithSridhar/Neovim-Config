@@ -1,5 +1,7 @@
 local ks = vim.keymap.set
 
+-- ks("mode", "keymap", "action", opts)
+
 -- Remap Esc to jk
 ks('i', 'jk', '<Esc>', { silent = true })
 

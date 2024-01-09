@@ -46,9 +46,6 @@ ks("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 ks("n", "<leader>gg", vim.cmd.LazyGit)
 
--- Tagbar
-ks("n", "<leader>t", ":TagbarToggle<CR>")
-
 -- Nvim Tree
 
 local nvim_tree = require("nvim-tree.api")

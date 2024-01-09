@@ -243,14 +243,18 @@ require('lazy').setup({
     end
   },
 
+  {
+    -- Highlights hex colors such as #9adaf4
+    "norcalli/nvim-colorizer.lua",
+    version = "*",
+    event = "VeryLazy",
+    config = function ()
+      require('colorizer').setup()
+    end
+  },
+
   -- Comment using gc
   'tpope/vim-commentary',
-
-  -- Tag bar
-  -- Required installation of other packages:
-  -- https://jdhao.github.io/2018/09/28/nvim_tagbar_install_use/
-  -- Note: Just install ctags using: pacman -S ctags
-  'preservim/tagbar',
 
   -- Jinja Syntax highlighing
   'Glench/Vim-Jinja2-Syntax'
