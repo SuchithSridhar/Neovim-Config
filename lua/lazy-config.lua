@@ -231,19 +231,6 @@ require('lazy').setup({
   },
 
   {
-    "chentoast/marks.nvim",
-    version = "*",
-    event = "VeryLazy",
-    config = function()
-      require('marks').setup {
-        default_mappings = true,
-        refresh_interval = 250,
-        builtin_marks = { ".", "<", ">", "^", "`", "'" }
-      }
-    end
-  },
-
-  {
     -- Highlights hex colors such as #9adaf4
     "norcalli/nvim-colorizer.lua",
     version = "*",
