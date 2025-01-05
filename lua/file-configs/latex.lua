@@ -1,11 +1,6 @@
 function MapLatexBindings()
   -- Compile latex document
-  vim.keymap.set(
-    "n",
-    "<F12>",
-    ":w <CR><CR> :!pdflatex % > /dev/null 2>&1<CR><CR>",
-    { silent = true }
-  )
+  vim.keymap.set("n", "<F12>", ":w <CR><CR> :!pdflatex % > /dev/null 2>&1<CR><CR>", { silent = true })
 end
 
 function SetLatexSetting()

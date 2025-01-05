@@ -8,10 +8,7 @@ function UploadNotes()
       if exit_code == 0 then
         vim.notify("Upload completed successfully!", vim.log.levels.INFO)
       else
-        vim.notify(
-          "Upload failed with exit code: " .. exit_code,
-          vim.log.levels.ERROR
-        )
+        vim.notify("Upload failed with exit code: " .. exit_code, vim.log.levels.ERROR)
       end
     end,
   })
