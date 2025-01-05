@@ -15,6 +15,7 @@ return {
         "typescript",
         "regex",
         "yaml",
+        "toml",
         "bash",
         "c",
         "diff",
