@@ -54,6 +54,7 @@ return {
       { "<leader>s", group = "[S]earch" },
       { "<leader>n", group = "[N]eovim" },
       { "<leader>l", group = "[L]sp" },
+      { "<leader>j", group = "Harpoon" },
     },
   },
 }

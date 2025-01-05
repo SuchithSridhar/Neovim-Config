@@ -9,4 +9,10 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
+
+  -- Undo Tree (Undo history tree)
+  {
+    "mbbill/undotree",
+    config = function() vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree" }) end,
+  },
 }

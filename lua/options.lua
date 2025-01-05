@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.schedule(function() vim.opt.clipboard = "unnamedplus" end)
-
 -- Enable mouse mode, can be useful for resizing splits
 vim.opt.mouse = "a"
 vim.opt.number = true

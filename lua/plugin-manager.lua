@@ -20,7 +20,10 @@ require("lazy").setup({
   },
   -- Check for updates of packages
   checker = { enabled = true },
-  change_detection = { notify = true },
+  change_detection = {
+    enabled = false,
+    notify = false,
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
