@@ -1,18 +1,18 @@
 return { -- Fuzzy Finder (files, lsp, etc)
-  'nvim-telescope/telescope.nvim',
-  event = 'VimEnter',
-  branch = '0.1.x',
+  "nvim-telescope/telescope.nvim",
+  event = "VimEnter",
+  branch = "0.1.x",
   dependencies = {
-    'nvim-lua/plenary.nvim',
+    "nvim-lua/plenary.nvim",
     {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make',
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
       cond = function()
-        return vim.fn.executable 'make' == 1
+        return vim.fn.executable("make") == 1
       end,
     },
-    { 'nvim-telescope/telescope-ui-select.nvim' },
-    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    { "nvim-telescope/telescope-ui-select.nvim" },
+    { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
   },
   config = function()
     -- The easiest way to use Telescope, is to start by doing something like:
@@ -30,17 +30,16 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Telescope picker. This is really useful to discover what Telescope can
     -- do as well as how to actually do it!
 
-    require('telescope').setup {
+    require("telescope").setup({
       extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown(),
         },
       },
-    }
+    })
 
     -- Enable Telescope extensions if they are installed
-    pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'ui-select')
-
+    pcall(require("telescope").load_extension, "fzf")
+    pcall(require("telescope").load_extension, "ui-select")
   end,
 }
