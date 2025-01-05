@@ -190,6 +190,8 @@ return {
       local luasnip = require("luasnip")
       luasnip.config.setup({})
 
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/friendly-snippets/" })
+
       cmp.setup({
         snippet = {
           expand = function(args) luasnip.lsp_expand(args.body) end,

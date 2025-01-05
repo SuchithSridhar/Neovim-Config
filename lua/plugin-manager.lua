@@ -19,7 +19,8 @@ require("lazy").setup({
     { import = "plugins" },
   },
   -- Check for updates of packages
-  checker = { enabled = true },
+  checker = { enabled = false },
+  -- Check for change in config
   change_detection = {
     enabled = false,
     notify = false,
