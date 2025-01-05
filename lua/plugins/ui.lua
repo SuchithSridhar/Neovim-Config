@@ -82,4 +82,12 @@ return {
     },
     config = function() vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit, { desc = "LazyGit" }) end,
   },
+
+  -- Highlights hex colors such as #9adaf4
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
+    version = "*",
+    config = function() require("colorizer").setup() end,
+  },
 }

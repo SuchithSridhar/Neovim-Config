@@ -15,4 +15,17 @@ return {
     "mbbill/undotree",
     config = function() vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree" }) end,
   },
+
+  -- Hop around like easy motion
+  {
+    "smoka7/hop.nvim",
+    version = "*",
+    opts = {},
+    config = function()
+      require("hop").setup()
+      vim.keymap.set("n", "<leader>ee", ":HopWord<CR>", { desc = "Hop to word" })
+      vim.keymap.set("n", "<leader>er", ":HopChar1<CR>", { desc = "Hop to char" })
+      vim.keymap.set("n", "<leader>el", ":HopLine<CR>", { desc = "Hop to line" })
+    end,
+  },
 }

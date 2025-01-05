@@ -16,6 +16,19 @@ return { -- Collection of various small independent plugins/modules
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require("mini.surround").setup()
 
+    require("mini.pairs").setup()
+
+    local toggle_mini_pairs = function()
+      vim.g.minipairs_disable = not vim.g.minipairs_disable
+      if vim.g.minipairs_disable then
+        vim.notify("Disabled auto pairs", vim.log.levels.WARN)
+      else
+        vim.notify("Enable auto pairs", vim.log.levels.INFO)
+      end
+    end
+
+    vim.keymap.set("n", "<leader>np", toggle_mini_pairs, { desc = "Toggle Auto Pairs" })
+
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
     --  and try some other statusline plugin

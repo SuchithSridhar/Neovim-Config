@@ -6,6 +6,15 @@ return {
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
+        "javascript",
+        "python",
+        "latex",
+        "rust",
+        "go",
+        "json",
+        "typescript",
+        "regex",
+        "yaml",
         "bash",
         "c",
         "diff",
@@ -35,5 +44,24 @@ return {
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+
+  -- show current context at the top of the widow
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      require("treesitter-context").setup({
+        enable = true,
+        max_lines = 0,
+        min_window_height = 0,
+        line_numbers = true,
+        multiline_threshold = 20,
+        trim_scope = "outer",
+        mode = "cursor",
+        separator = nil,
+        zindex = 20,
+        on_attach = nil,
+      })
+    end,
   },
 }
