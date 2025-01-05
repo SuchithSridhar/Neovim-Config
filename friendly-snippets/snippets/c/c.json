@@ -16,8 +16,8 @@
             "#include <stdio.h>",
             "#include <stdlib.h>",
             "",
-            "int main(int argc, char *argv[])",
-            "{$0",
+            "int main(int argc, char *argv[]){",
+            "\t$0",
             "\treturn EXIT_SUCCESS;",
             "}"
         ],
@@ -284,17 +284,17 @@
     },
     "printf": {
         "prefix": "printf",
-        "body": ["printf(\"${1:%s}\\n\"$2)$0"],
+        "body": ["printf(\"${1:%s}\\n\"$2);$0"],
         "description": "printf() snippet"
     },
     "fprintf": {
         "prefix": "fprintf",
-        "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$3)$0"],
+        "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$3);$0"],
         "description": "fprintf() snippet"
     },
     "sprintf": {
         "prefix": "sprintf",
-        "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$3)$0"],
+        "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$3);$0"],
         "description": "sprintf() snippet"
     },
     "snprintf": {
