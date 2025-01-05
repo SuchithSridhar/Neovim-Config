@@ -14,9 +14,7 @@ function UploadNotes()
   })
 end
 
-function MapMarkdownBindings()
-  vim.keymap.set("n", "<F12>", UploadNotes, { silent = true })
-end
+function MapMarkdownBindings() vim.keymap.set("n", "<F12>", UploadNotes, { silent = true }) end
 
 function SetMarkdownSetting()
   vim.opt.textwidth = 80
