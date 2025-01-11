@@ -128,7 +128,12 @@ return {
       -- Command to install all these formatters
       -- sudo pacman -S --needed \
       --  clang go shfmt stylua python-black python-isort \
-      --  texlive-core prettier
+      --  texlive-core texlive-binextra prettier
+      --  Missing Deps from latexindent:
+      -- yay -S --needed perl-log-log4perl perl-file-homedir \
+      -- perl-log-dispatch perl-namespace-autoclean perl-specio \
+      -- perl-eval-closure perl-params-validationcompiler \
+      -- perl-yaml-tiny perl-unicode-linebreak
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "isort", "black" },
@@ -145,6 +150,13 @@ return {
         markdown = { "prettier" },
         latex = { "latexindent" },
         java = { "clang-format" },
+      },
+
+      formatters = {
+        black = {
+          command = "black",
+          prepend_args = { "-l", "80" },
+        },
       },
     },
   },
