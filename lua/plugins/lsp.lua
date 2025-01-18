@@ -155,7 +155,7 @@ return {
       formatters = {
         black = {
           command = "black",
-          prepend_args = { "-l", "80" },
+          prepend_args = { "-l", "79" },
         },
       },
     },
