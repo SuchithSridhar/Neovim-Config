@@ -24,6 +24,29 @@ create_cmd("Tab2", "set tabstop=2 softtabstop=2 shiftwidth=2", { desc = "Set the
 
 create_cmd("Tab4", "set tabstop=4 softtabstop=4 shiftwidth=4", { desc = "Set the tabstop to 4 for current file" })
 
+local function replace_math_delims(opts)
+  local line1 = opts.line1
+  local line2 = opts.line2
+
+  if opts.range == 0 then
+    line1 = 1
+    line2 = vim.fn.line("$")
+  end
+
+  local range = line1 .. "," .. line2
+
+  vim.cmd(range .. [[s/\\\[/$$/g]])
+  vim.cmd(range .. [[s/\\\]/$$/g]])
+  vim.cmd(range .. [[s/\\(\s*/$/g]])
+  vim.cmd(range .. [[s/\s*\\)/$/g]])
+end
+
+create_cmd("ReplaceMathDelims", replace_math_delims, {
+  range = true,
+  nargs = 0,
+  desc = "Replace LaTeX math delimiters (\\[\\], \\(\\)) with $$ or $",
+})
+
 create_cmd("Format", function(args)
   local range = nil
   if args.count ~= -1 then
