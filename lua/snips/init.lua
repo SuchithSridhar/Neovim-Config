@@ -22,6 +22,7 @@ local c_snips = require("snips.c")
 local cpp_snips = require("snips.cpp")
 local jinja_snips = require("snips.jinja")
 local html_snips = require("snips.html")
+local djangohtml_snips = require("snips.django")
 
 ls.add_snippets(nil, {
   all = global_snips,
@@ -31,5 +32,6 @@ ls.add_snippets(nil, {
   markdown = markdown_snips,
   tex = tex_snips,
   jinja = jinja_snips,
+  djangohtml = djangohtml_snips,
   html = html_snips,
 })

@@ -5,7 +5,8 @@ local t = ls.t -- text
 local i = ls.i -- input
 local f = ls.f -- function
 
-ls.filetype_extend("jinja", { "html" })
+ls.filetype_extend("htmldjango", { "html" })
+ls.filetype_extend("django", { "html" })
 
 return {
   s({
@@ -24,8 +25,8 @@ return {
 
   s({
     trig = "{%",
-    name = "Jinja tag",
-    desc = "Jinja tag",
+    name = "Django tag",
+    desc = "Django tag",
   }, {
     t("{% "),
     i(1),
