@@ -200,6 +200,7 @@ return {
       --  into multiple repos for maintenance purposes.
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
     },
     config = function()
       -- See `:help cmp`
@@ -208,6 +209,13 @@ return {
       luasnip.config.setup({})
 
       require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/friendly-snippets/" })
+
+      local default_sources = {
+        { name = "lazydev", group_index = 0 },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "path" },
+      }
 
       cmp.setup({
         snippet = {
@@ -263,16 +271,11 @@ return {
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         }),
-        sources = {
-          {
-            name = "lazydev",
-            -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-            group_index = 0,
-          },
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "path" },
-        },
+        sources = default_sources,
+      })
+
+      cmp.setup.filetype({ "markdown", "text", "gitcommit" }, {
+        sources = vim.list_extend({ { name = "buffer", keyword_length = 3 } }, default_sources),
       })
     end,
   },
